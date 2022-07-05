@@ -1,22 +1,33 @@
 let scoreJoueur = document.getElementById("score-joueur");
 let scoreIa = document.getElementById("score-ia");
 
+let playerScore = 0
+let iaScore = 0
+
+let playerRound = 0
+let iaRound = 0
+
+let gameRound = 0
+
 const pierreClicked = () => {
   document.getElementById("playerChoice").src = "./img/pierre.png";
   playerChoice = "Pierre";
-  iaTour();
+  document.getElementById("iaChoice").src ="./img/gif_hand.gif"
+  setTimeout(iaTour, 1600)  
 };
 
 const ciseauxClicked = () => {
   document.getElementById("playerChoice").src = "./img/ciseaux.png";
   playerChoice = "Ciseaux";
-  iaTour();
+  document.getElementById("iaChoice").src ="./img/gif_hand.gif"
+  setTimeout(iaTour, 1600)   
 };
 
 const feuilleClicked = () => {
   document.getElementById("playerChoice").src = "./img/feuille.png";
   playerChoice = "Feuille";
-  iaTour();
+  document.getElementById("iaChoice").src ="./img/gif_hand.gif"
+  setTimeout(iaTour, 1600)  
 };
 
 const iaTour = () => {
@@ -39,13 +50,15 @@ const iaTour = () => {
 
 const compareChoices = () => {
   let resultat = "";
+  let resultat2 = ""
+  
 
   if (playerChoice === "Pierre") {
     if (iaChoice === "Feuille") {
-      resultat = "l'IA a gagné";
+      resultat = "l'IA a gagné cette manche";
       iaScore++;
     } else if (iaChoice === "Ciseaux") {
-      resultat = "Vous avez gagné !";
+      resultat = "Vous avez gagné cette manche";
       playerScore++;
     } else {
       resultat = "Egalité !";
@@ -53,10 +66,10 @@ const compareChoices = () => {
   }
   if (playerChoice === "Feuille") {
     if (iaChoice === "Ciseaux") {
-      resultat = "l'IA a gagné !";
+      resultat = "l'IA a gagné cette manche";
       iaScore++;
     } else if (iaChoice === "Pierre") {
-      resultat = "Vous avez gagné !";
+      resultat = "Vous avez gagné cette manche";
       playerScore++;
     } else {
       resultat = "Egalité !";
@@ -67,13 +80,44 @@ const compareChoices = () => {
       resultat = "l'IA a gagné";
       iaScore++;
     } else if (iaChoice === "Feuille") {
-      resultat = "Vous avez gagné !";
+      resultat = "Vous avez gagné cette manche!";
       playerScore++;
     } else {
       resultat = "Egalité !";
     }
   }
+
+
+    // resultat2 = "Round " + gameRound
+
+
+  if (playerScore === 3){
+    playerRound++
+    gameRound++
+    playerScore = 0
+    iaScore = 0
+    resultat = "Vous avez gagner la partie !! (ce n'était qu'une IA)" 
+  } else if (iaScore === 3) {
+    iaRound++
+    gameRound++
+    playerScore = 0
+    iaScore = 0
+    resultat = "la magnifique IA a gagné la partie !!!"
+  }
+  // if (playerRound === 3) {
+  //   resultat = "Vous avez gagné ! (ce n'est qu'une IA..)"
+    
+  // } else if (iaRound === 3) {
+  //   resultat ="Game Over... Vous avez perdu face à une IA..."
+  // }
+
+ 
+
+
+
+  
   document.getElementById("resultat").innerHTML = resultat;
+  document.getElementById("resultat2").innerHTML = resultat2;
   scoreJoueur.innerHTML = playerScore;
   scoreIa.innerHTML = iaScore;
 };
@@ -87,5 +131,4 @@ function getRandomArbitrary() {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let playerScore = 0;
-let iaScore = 0;
+

@@ -5,9 +5,16 @@
     src: url(./Verdana-Font/Verdana.ttf);
 }
 
+
 img {
     height: 34px;
 }
+/* 
+.resultat2 {
+    display: inline-block;
+    position: fixed;
+    
+} */
 
 body{
     background-color: rgb(44, 47, 58);
@@ -26,7 +33,7 @@ body{
     padding: 30px
 }
 
-.choix {
+.choix, .choixIa {
     margin-right: 35px;
     margin-left: 35px;
 }
@@ -37,15 +44,13 @@ button.playBtn {
     padding: 10px
 }
 
-/* .playerChoice,
-.iaChoice, */
+
 .choice {
     display: flex;
     justify-content: space-evenly;
     
 }
 .playerChoice {
-    /* padding-right: 20px; */
     height: 60px;
 }
 
@@ -57,7 +62,7 @@ button.playBtn {
 }
 
 .score {
-    margin-top: 20px;
+    margin-top: 80px;
     margin-bottom: 40px;
     display: grid;
     justify-content: center;
@@ -70,7 +75,36 @@ button.playBtn {
 
 }
 
+.playBtnIa {
+    background-color: gray;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    cursor: not-allowed;
+}
+
   #resultat {
     display: flex;
     justify-content: center;
+    margin-bottom: 80px
+  }
+  #resultat2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-delay: 1s;
+  }
+
+  #next {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+  }
+  #message {
+    font-weight: bolder;
+  }
+
+  @media screen and (max-width: 750px) {
+    .choixIa {
+        display: none;
+    }
   }

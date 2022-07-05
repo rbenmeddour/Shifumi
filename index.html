@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +7,16 @@
     <title>Shifumi</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
     <div class="action">
-        <!-- <p id="message">Jouez !</p> -->
-        <div id="next">Tour Suivant</div>
-    </div>
+        <p id="message">Shifumi Game</p>
+        <h2 id="resultat2">
+        </h2>
     <div class="score">
         <p>Vous</p>
         <p>IA</p>
         <p id="score-joueur">0</p>
         <p id="score-ia">0</p>
-        <!-- <div id="reset">Recommencer</div> -->
     </div>
     <h2 id="resultat">Jouez !</h2>
 
@@ -57,21 +53,21 @@
 
         <div class="playerSection">
 
-            <div class="choix">
-                <button class="playBtn" onclick="iaBtn">
+            <div class="choixIa">
+                <button class="playBtnIa" onclick="iaBtn">
                     <div class="button btn-ia" id="opierre">
                         <img src="img/pierre.png" alt="pierre">
                         <p>Pierre</p>
                     </div>
                 </button>
-                <button class="playBtn">
+                <button class="playBtnIa">
     
                     <div class="button btn-ia" id="ofeuille">
                         <img src="img/feuille.png" alt="feuille">
                         <p>Feuille</p>
                     </div>
                 </button>
-                <button class="playBtn">
+                <button class="playBtnIa">
                     <div class="button btn-ia" id="ociseaux">
                         <img src="img/ciseaux.png" alt="ciseaux">
                         <p>Ciseaux</p>
@@ -79,6 +75,8 @@
                 </button>
             </div>
         </div>
+    </div>
+ 
         <script src="index.js"></script>
 </body>
 
