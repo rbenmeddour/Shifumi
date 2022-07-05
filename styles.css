@@ -1,10 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;700&display=swap');
+
+@font-face {
+    font-family: Verdana;
+    src: url(./Verdana-Font/Verdana.ttf);
+}
+
 img {
     height: 34px;
+}
+
+body{
+    background-color: rgb(44, 47, 58);
+    color: white;
+    font-family: Verdana;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .jeu {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 50px;
+    flex-wrap: wrap;
+    /* margin-top: 50px; */
     padding: 30px
 }
+
+.choix {
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+button.playBtn {
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px
+}
+
+/* .playerChoice,
+.iaChoice, */
+.choice {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.playerChoice {
+    /* padding-right: 20px; */
+    height: 60px;
+}
+
+.iaChoice {
+    padding-left: 20px;
+    height: 60px;
+    margin-left: 50px;
+
+}
+
+.score {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 200px);
+    text-align: center;
+    font-size: 30px;
+    padding: var(--btn-padding);
+    border-radius: 15px; 
+    border: solid 1px #fff;
+
+}
+
+  #resultat {
+    display: flex;
+    justify-content: center;
+  }
