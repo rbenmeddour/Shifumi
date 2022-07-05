@@ -1,5 +1,6 @@
 let scoreJoueur = document.getElementById("score-joueur");
 let scoreIa = document.getElementById("score-ia");
+const gameEnd=document.getElementById("gameEnd");
 
 let playerScore = 0
 let iaScore = 0
@@ -86,8 +87,6 @@ const compareChoices = () => {
       resultat = "Egalité !";
     }
   }
-
-
     // resultat2 = "Round " + gameRound
 
 
@@ -97,13 +96,39 @@ const compareChoices = () => {
     playerScore = 0
     iaScore = 0
     resultat = "Vous avez gagner la partie !! (ce n'était qu'une IA)" 
+    const video=document.createElement('video');
+        video.src='./img/gigachad.mp4';
+        video.autoplay = true;
+        video.controls = false;
+        video.muted = false;
+        video.volume = 0.1
+        gameEnd.appendChild(video);
+        gameEnd.style.display="block"
+        video.addEventListener('ended', (event) => {
+            gameEnd.style.display = 'none';
+            gameEnd.innerHTML='';
+        })   
+        
   } else if (iaScore === 3) {
     iaRound++
     gameRound++
     playerScore = 0
     iaScore = 0
-    resultat = "la magnifique IA a gagné la partie !!!"
+    resultat = "La magnifique IA a gagné la partie !!!"
+    const video=document.createElement('video');
+        video.src='./img/nelson.mp4';
+        video.autoplay = true;
+        video.controls = false;
+        video.muted = false;
+        video.volume = 0.1
+        gameEnd.appendChild(video);
+        gameEnd.style.display="block"
+        video.addEventListener('ended', (event) => {
+            gameEnd.style.display = 'none';
+            gameEnd.innerHTML='';
+        })
   }
+
   // if (playerRound === 3) {
   //   resultat = "Vous avez gagné ! (ce n'est qu'une IA..)"
     
